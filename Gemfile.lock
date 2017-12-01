@@ -1,3 +1,11 @@
+GIT
+  remote: git://github.com/EnigmaInTheJungle/ttt_web_gameBoard.git
+  revision: 6da67b3f8360f6db567de2c29cd58da3cae21f92
+  specs:
+    ttt_web_gameBoard (0.4.0)
+      sinatra
+      ttt_core (~> 0.5.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -163,9 +171,6 @@ GEM
     thread_safe (0.3.6)
     tilt (2.0.8)
     ttt_core (0.5.0)
-    ttt_web (0.4.0)
-      sinatra
-      ttt_core (~> 0.5.0)
     turbolinks (5.0.1)
       turbolinks-source (~> 5)
     turbolinks-source (5.0.3)
@@ -201,7 +206,7 @@ DEPENDENCIES
   selenium-webdriver
   spring
   spring-watcher-listen (~> 2.0.0)
-  ttt_web
+  ttt_web_gameBoard!
   turbolinks (~> 5)
   tzinfo-data
   uglifier (>= 1.3.0)

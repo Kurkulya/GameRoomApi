@@ -1,3 +1,5 @@
+require 'net/http'
+require 'uri'
 class RoomsController < ApplicationController
   before_action :set_room, only: [:show, :edit, :update, :destroy]
 
@@ -15,8 +17,20 @@ class RoomsController < ApplicationController
 
   def start_game
     Thread.new do
-      system('ttt_web')
+      system('ttt_web_gameBoard')
     end
+  end
+
+  def stop_server
+    @response = params
+    # Thread.new do
+    #   system('kill -9 $(lsof -i tcp:4567 -t)')
+    # end
+    params = {'box1' => 'Nothing is less important than which fork you use. Etiquette is the science of living. It embraces everything. It is ethics. It is honor. -Emily Post',
+              'button1' => 'Submit'
+    }
+    x = Net::HTTP.post_form(URI.parse('ws://localhost:8050/1'), @response)
+    put x.body
   end
   # GET /rooms/new
   def new
