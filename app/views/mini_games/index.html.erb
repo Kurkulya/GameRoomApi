@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Mini Games</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @mini_games.each do |mini_game| %>
+      <tr>
+        <td><%= link_to 'Show', mini_game %></td>
+        <td><%= link_to 'Edit', edit_mini_game_path(mini_game) %></td>
+        <td><%= link_to 'Destroy', mini_game, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Mini Game', new_mini_game_path %>
